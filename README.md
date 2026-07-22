@@ -1,10 +1,16 @@
 
-# Data Structures in Python
+## Understanding `list.remove()` in Python
 
-This repository contains implementations of common data structures.
+```python
+list1 = [1,2,3,4,3,1,6,5,6]
+list1.remove(6)
+```
 
-## Files
+### Internal Working
+1. Python searches for the value `6` from left to right.
+2. Once found, all elements after it are shifted one position to the left.
+3. The list length is reduced by one.
+4. The list capacity usually remains unchanged.
+5. The removed object's memory is reclaimed only when no references to it remain.
 
-- `linked_list.py` – Implements a Singly Linked List with insertion, deletion, searching, and traversal.
-- `stack.py` – Stack implementation using Python lists.
-- `queue.py` – Queue implementation with enqueue and dequeue operations.
+**Time Complexity:** O(n)
